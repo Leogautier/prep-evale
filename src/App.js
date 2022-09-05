@@ -18,11 +18,12 @@ function App() {
   ]
 
 
-  const productElements = cardContenents.map((categorie) =>(
+  const productElements = cardContenents.map((categorie) => (
     <div className='col-12 col-lg-3' key={categorie.id}>
       <Card title={categorie.title} image={categorie.image} description={categorie.description} />
     </div>
   ));
+
 
   return (
     <>
@@ -30,10 +31,10 @@ function App() {
         <Page />
       </div>
       <div className="container-fluid p-5 d-flex">
-      {productElements}
+        {productElements}
       </div>
       <div className='pt-5 bg-dark text-white'>
-      <Formulaire/>
+        <Formulaire />
       </div>
     </>
   );
