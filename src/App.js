@@ -24,6 +24,11 @@ function App() {
     </div>
   ));
 
+  function onSubmit(){
+
+    console.log("fh");
+  }
+
   return (
     <>
       <div>

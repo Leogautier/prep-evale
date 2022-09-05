@@ -29,6 +29,7 @@ const Formulaire = () => {
                     <div class="form-group">
                         <label>Message</label>
                         <textarea class="form-control" rows="9"></textarea>
+                        <button type="button" class="btn btn-secondary mt-3">Envoyer</button>
                     </div>
                 </div>
             </form>
