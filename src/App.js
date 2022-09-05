@@ -1,6 +1,7 @@
 import React from 'react';
 import Page from './components/Page';
 import Card from "./components/Card";
+import Formulaire from './components/Formulaire';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 
@@ -9,10 +10,10 @@ function App() {
 
   const cardContenents = [
 
-    { id: "1", title: "test", image: "https://picsum.photos/id/237/200/300", description: "test tet" },
-    { id: "2", title: "test", image: "https://picsum.photos/id/236/200/300", description: "tet tet" },
-    { id: "3", title: "test", image: "https://picsum.photos/id/235/200/300", description: "tes tet" },
-    { id: "4", title: "test", image: "https://picsum.photos/id/234/200/300", description: "tt tet" }
+    { id: "1", title: "test", image: "https://picsum.photos/id/237/500", description: "test tet" },
+    { id: "2", title: "test", image: "https://picsum.photos/id/236/500", description: "tet tet" },
+    { id: "3", title: "test", image: "https://picsum.photos/id/235/500", description: "tes tet" },
+    { id: "4", title: "test", image: "https://picsum.photos/id/234/500", description: "tt tet" }
 
   ]
 
@@ -28,8 +29,11 @@ function App() {
       <div>
         <Page />
       </div>
-      <div className="row container">
+      <div className="container-fluid p-5 d-flex">
       {productElements}
+      </div>
+      <div className='pt-5 bg-dark text-white'>
+      <Formulaire/>
       </div>
     </>
   );
