@@ -1,14 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Navbar = ({color, handleDarkMode}) => {
+const Navbar = ({color, handleDarkMode, texte, changText}) => {
     
 
-//   const [text, setText] = useState('Light');
 
-//   const onChange = () => {
-//     setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
-//   }
     
     
     return (
@@ -24,8 +20,8 @@ const Navbar = ({color, handleDarkMode}) => {
                     </ul>
                     <span className="navbar-text">
                         <div className="form-check form-switch">
-                            <input className="form-check-input" type="checkbox"  onClick={handleDarkMode}/>
-                            <label className="form-check-label"></label>
+                            <input className="form-check-input" type="checkbox" onChange={changText} onClick={handleDarkMode}/>
+                            <label className="form-check-label">{texte}</label>
                         </div>
                     </span>
                 </div>
@@ -38,5 +34,5 @@ const Navbar = ({color, handleDarkMode}) => {
 export default Navbar;
 
 
-// {text}
-// onChange={onChange}
+// 
+// 

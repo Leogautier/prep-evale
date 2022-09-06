@@ -13,9 +13,13 @@ function App() {
   const [color, setColor] = useState('navbar-light');
 
   const DarkMode = () => {
-    setColor((value) => (value === 'navbar-light' ? 'navbar-dark bg-dark' : 'navbar-light'))
+    setColor((value) => (value === 'navbar-light' ? 'navbar-dark bg-dark text-white' : 'navbar-light'))
   }
- 
+   const [text, setText] = useState('Light');
+
+  const changText = () => {
+    setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
+  }
 
 
   const cardContenents = [
@@ -37,9 +41,9 @@ function App() {
 
   return (
     <>
-    
+    <body className={color}>
         <div>
-          <Navbar color= {color} handleDarkMode= {DarkMode}/>
+          <Navbar color= {color} handleDarkMode= {DarkMode} changText={changText} texte={text}/>
         </div>
         <div>
           <div>
@@ -52,6 +56,7 @@ function App() {
             <Formulaire />
           </div>
         </div>
+        </body>
     </>
   );
 };
