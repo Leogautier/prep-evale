@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Navbar = ({color, handleDarkMode, texte, changText}) => {
+const Navbar = ({color, handleDarkMode, texte, changText, HomeScreen, ProductScreen }) => {
     
 
 
@@ -11,11 +11,11 @@ const Navbar = ({color, handleDarkMode, texte, changText}) => {
         <>
         <nav className={`${color} navbar navbar-expand-lg `} >
             <div className="container-fluid">
-                <a className="navbar-brand" href="acceuil">Boutique</a>
+                <span className="navbar-brand" onClick={HomeScreen}>Boutique</span>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" href="produits">Produits</a>
+                            <span className="nav-link active" onClick={ProductScreen}>Produits</span>
                         </li>
                     </ul>
                     <span className="navbar-text">

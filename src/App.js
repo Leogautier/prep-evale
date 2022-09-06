@@ -21,6 +21,19 @@ function App() {
     setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
   }
 
+  const [currentPage, setCurrentPage] = useState('');
+
+  const HomeScreen = () =>{
+
+    setCurrentPage((value) =>(value === 'HomeScreen'))
+
+  }
+  const ProductScreen = () =>{
+
+    setCurrentPage((value) =>(value === 'ProductScreen'))
+
+  }
+
 
   const cardContenents = [
 
@@ -43,7 +56,15 @@ function App() {
     <>
     <body className={color}>
         <div>
-          <Navbar color= {color} handleDarkMode= {DarkMode} changText={changText} texte={text}/>
+          <Navbar color= {color} 
+          handleDarkMode= {DarkMode} 
+          changText={changText} 
+          texte={text} 
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage}
+          HomeScreen={HomeScreen}
+          ProductScreen={ProductScreen}
+          />
         </div>
         <div>
           <div>
