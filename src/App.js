@@ -2,6 +2,7 @@ import React from 'react';
 import Page from './components/Page';
 import Card from "./components/Card";
 import Formulaire from './components/Formulaire';
+import Navbar from './components/Navbar';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
@@ -9,20 +10,17 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
 
-  const [color, setColor] = useState('bg-light');
+  // const [color, setColor] = useState('bg-light');
 
-  const onClick = () => {
-    setColor((value) => (value === 'bg-light' ? 'bg-dark text-white' : 'bg-light'))
-  }
+  // const onClick = () => {
+  //   setColor((value) => (value === 'bg-light' ? 'bg-dark text-white' : 'bg-light'))
+  // }
 
-  const [text, setText] = useState('Light');
+  // const [text, setText] = useState('Light');
 
-  const onChange = () => {
-    setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
-  }
-
-
-
+  // const onChange = () => {
+  //   setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
+  // }
 
   // const = () => {
   //   if (color === 'bg-light') {
@@ -52,14 +50,13 @@ function App() {
 
   return (
     <>
-      <body className={color}>
+        <div>
+          <Navbar >
+          </Navbar>
+        </div>
         <div>
           <div>
             <Page />
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" onChange={onChange} onClick={onClick} />
-              <label class="form-check-label" >{text}</label>
-            </div>
           </div>
           <div className="container-fluid p-5 d-flex">
             {productElements}
@@ -68,9 +65,15 @@ function App() {
             <Formulaire />
           </div>
         </div>
-      </body>
     </>
   );
 };
 
 export default App;
+
+
+// onChange={onChange} onClick={onClick}
+
+// {text}
+
+// {color}
