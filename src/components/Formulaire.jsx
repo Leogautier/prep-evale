@@ -33,8 +33,8 @@ const Formulaire = () => {
                         <input name="email" type="email" className="form-control" />
                     </div>
                     <div className="mb-3">
-                        <label className="form-label">Password</label>
-                        <input name='mdp' type="password" className="form-control" />
+                        <label className="form-label">Sujet</label>
+                        <input name='mdp' className="form-control" />
                     </div>
                     <div className="mb-3 form-check">
                     </div>
