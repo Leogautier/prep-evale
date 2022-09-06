@@ -3,9 +3,11 @@ import Page from './components/Page';
 import Card from "./components/Card";
 import Formulaire from './components/Formulaire';
 import Navbar from './components/Navbar';
+import ProductPage from './components/ProductPage';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
+
 
 
 function App() {
