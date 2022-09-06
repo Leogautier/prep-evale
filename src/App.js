@@ -10,25 +10,12 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
 
-  // const [color, setColor] = useState('bg-light');
+  const [color, setColor] = useState('navbar-light');
 
-  // const onClick = () => {
-  //   setColor((value) => (value === 'bg-light' ? 'bg-dark text-white' : 'bg-light'))
-  // }
-
-  // const [text, setText] = useState('Light');
-
-  // const onChange = () => {
-  //   setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
-  // }
-
-  // const = () => {
-  //   if (color === 'bg-light') {
-  //     setColor('bg-dark');
-  //   } else {
-  //     setColor('bg-light');
-  //   }
-  // };
+  const DarkMode = () => {
+    setColor((value) => (value === 'navbar-light' ? 'navbar-dark bg-dark' : 'navbar-light'))
+  }
+ 
 
 
   const cardContenents = [
@@ -50,9 +37,9 @@ function App() {
 
   return (
     <>
+    
         <div>
-          <Navbar >
-          </Navbar>
+          <Navbar color= {color} handleDarkMode= {DarkMode}/>
         </div>
         <div>
           <div>
@@ -72,8 +59,8 @@ function App() {
 export default App;
 
 
-// onChange={onChange} onClick={onClick}
+// 
 
-// {text}
+// 
 
 // {color}
