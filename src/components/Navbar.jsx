@@ -1,21 +1,19 @@
 import React from 'react';
-import { useState } from 'react';
 
-const Navbar = ({color, handleDarkMode, texte, changText, HomeScreen, ProductScreen }) => {
+
+const Navbar = ({color, handleDarkMode, texte, changText, changScreen}) => {
     
 
-
-    
     
     return (
         <>
         <nav className={`${color} navbar navbar-expand-lg `} >
             <div className="container-fluid">
-                <span className="navbar-brand" onClick={HomeScreen}>Boutique</span>
+                <span className="navbar-brand" onClick={() => changScreen('homeScreen')}>Boutique</span>
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <span className="nav-link active" onClick={ProductScreen}>Produits</span>
+                            <span className="nav-link active"  onClick={() => changScreen('ProductScreen')}>Produits</span>
                         </li>
                     </ul>
                     <span className="navbar-text">

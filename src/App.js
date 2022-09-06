@@ -3,6 +3,7 @@ import Page from './components/Page';
 import Card from "./components/Card";
 import Formulaire from './components/Formulaire';
 import Navbar from './components/Navbar';
+import PageAcceuil from './components/PageAcceuil';
 import ProductPage from './components/ProductPage';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,30 +13,51 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 function App() {
 
+  // switch color
+
   const [color, setColor] = useState('navbar-light');
 
   const DarkMode = () => {
     setColor((value) => (value === 'navbar-light' ? 'navbar-dark bg-dark text-white' : 'navbar-light'))
   }
-   const [text, setText] = useState('Light');
+  const [text, setText] = useState('Light');
 
   const changText = () => {
     setText((value) => (value === 'Dark' ? 'Light' : 'Dark'))
   }
 
-  const [currentPage, setCurrentPage] = useState('');
+  // changement de page
 
-  const HomeScreen = () =>{
 
-    setCurrentPage((value) =>(value === 'HomeScreen'))
+  const [currentPage, setCurrentPage] = useState();
+
+  // const HomeScreen = () =>{
+  //   setCurrentPage((value) =>(value === 'HomeScreen'))
+  // }
+
+  // const ProductScreen = () =>{
+  //   setCurrentPage((value) =>(value === 'ProductScreen'))
+  //   if(currentPage === 'ProductScreen'){
+  //     return<ProductPage/>
+  //   }
+
+  //   else{
+  //     return 
+  //   }
+
+  // }
+  const changScreen = (route) => {
+    if (route === 'ProductScreen') {
+      setCurrentPage(<ProductPage />)
+    }
+    if (route === 'homeScreen')
+      setCurrentPage(<PageAcceuil />)
+
+
 
   }
-  const ProductScreen = () =>{
 
-    setCurrentPage((value) =>(value === 'ProductScreen'))
-
-  }
-
+  //card
 
   const cardContenents = [
 
@@ -56,30 +78,21 @@ function App() {
 
   return (
     <>
-    <body className={color}>
+      <Navbar
+        color={color}
+        handleDarkMode={DarkMode}
+        changText={changText}
+        texte={text}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        changScreen={changScreen}
+      />
+      <div className={color}>
+        {currentPage}
         <div>
-          <Navbar color= {color} 
-          handleDarkMode= {DarkMode} 
-          changText={changText} 
-          texte={text} 
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage}
-          HomeScreen={HomeScreen}
-          ProductScreen={ProductScreen}
-          />
+
         </div>
-        <div>
-          <div>
-            <Page />
-          </div>
-          <div className="container-fluid p-5 d-flex">
-            {productElements}
-          </div>
-          <div className='pt-5 bg-dark text-white'>
-            <Formulaire />
-          </div>
-        </div>
-        </body>
+      </div>
     </>
   );
 };
@@ -87,8 +100,8 @@ function App() {
 export default App;
 
 
-// 
+//
 
-// 
+//
 
 // {color}
