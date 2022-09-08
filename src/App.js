@@ -1,7 +1,4 @@
 import React from 'react';
-import Page from './components/Page';
-import Card from "./components/Card";
-import Formulaire from './components/Formulaire';
 import Navbar from './components/Navbar';
 import PageAcceuil from './components/PageAcceuil';
 import ProductPage from './components/ProductPage';
@@ -31,50 +28,13 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState();
 
-  // const HomeScreen = () =>{
-  //   setCurrentPage((value) =>(value === 'HomeScreen'))
-  // }
-
-  // const ProductScreen = () =>{
-  //   setCurrentPage((value) =>(value === 'ProductScreen'))
-  //   if(currentPage === 'ProductScreen'){
-  //     return<ProductPage/>
-  //   }
-
-  //   else{
-  //     return 
-  //   }
-
-  // }
   const changScreen = (route) => {
     if (route === 'ProductScreen') {
       setCurrentPage(<ProductPage />)
     }
     if (route === 'homeScreen')
       setCurrentPage(<PageAcceuil />)
-
-
-
   }
-
-  //card
-
-  const cardContenents = [
-
-    { id: "1", title: "test", image: "https://picsum.photos/id/237/500", description: "test tet" },
-    { id: "2", title: "test", image: "https://picsum.photos/id/236/500", description: "tet tet" },
-    { id: "3", title: "test", image: "https://picsum.photos/id/235/500", description: "tes tet" },
-    { id: "4", title: "test", image: "https://picsum.photos/id/234/500", description: "tt tet" }
-
-  ]
-
-
-  const productElements = cardContenents.map((categorie) => (
-    <div className='col-12 col-lg-3' key={categorie.id}>
-      <Card title={categorie.title} image={categorie.image} description={categorie.description} />
-    </div>
-  ));
-
 
   return (
     <>
